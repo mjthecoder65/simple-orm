@@ -91,3 +91,6 @@ def create_db(name):
     connection = sqlite3.connect(f'{name}.sqlite3')
     return name
 
+
+
+__all__ = ["create_db", "Model"]
