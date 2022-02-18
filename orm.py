@@ -69,7 +69,7 @@ class Model:
     def format(cls, values):
         fields = vars(cls)
         keys = []
-        for key, value in cls.__dict__.items():
+        for key, _ in cls.__dict__.items():
             if models.instanceof(fields[key]):
                 keys.append(key)
         return dict(zip(keys, values))

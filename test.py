@@ -1,5 +1,5 @@
 import unittest 
-import myorm
+import orm
 import models
 
 class TestingMappingClasses(unittest.TestCase):
@@ -18,11 +18,11 @@ class TestingMappingClasses(unittest.TestCase):
 
 class TestingDataBase(unittest.TestCase):
     def test_create_database(self):
-        mydb = myorm.create_db('mydb')
+        mydb = orm.create_db('mydb')
         self.assertEqual(mydb, 'mydb')
 
 class TestingORM(unittest.TestCase):
-    class Author(myorm.Model):
+    class Author(orm.Model):
         name = models.CharField(max_length=20)
         email = models.CharField(max_length=20)
     def test_create_table(self):
